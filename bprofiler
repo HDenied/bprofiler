@@ -1,0 +1,8 @@
+#!/bin/bash
+
+start_time="$EPOCHREALTIME"
+eval $1 > /dev/null
+end_time="$EPOCHREALTIME"
+
+elapsed="$(bc <<<"scale=6; $end_time-$start_time")"
+echo "Running time: $elapsed"
